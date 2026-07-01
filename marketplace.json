@@ -2,10 +2,16 @@
   "plugins": [
     {
       "name": "memgit",
-      "description": "Git for AI memory — persistent, version-controlled context across Claude, GPT, Cursor and more",
-      "version": "0.1.5",
+      "description": "Git for AI memory \u2014 persistent, version-controlled context across Claude, GPT, Cursor and more",
+      "version": "0.2.0",
       "path": "plugins/memgit",
-      "tags": ["memory", "mcp", "context", "productivity", "version-control"],
+      "tags": [
+        "memory",
+        "mcp",
+        "context",
+        "productivity",
+        "version-control"
+      ],
       "install": "pip install memgit && memgit init && memgit setup claude-code",
       "homepage": "https://github.com/code4161/memgit"
     }
