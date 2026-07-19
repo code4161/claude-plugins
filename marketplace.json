@@ -3,7 +3,7 @@
     {
       "name": "memgit",
       "description": "Git for AI memory \u2014 persistent, version-controlled context across Claude, GPT, Cursor and more",
-      "version": "0.6.2",
+      "version": "0.7.0",
       "path": "plugins/memgit",
       "tags": [
         "memory",
