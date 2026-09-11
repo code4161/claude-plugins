@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "memgit",
+  "description": "Git for AI memory \u2014 version-controlled, searchable context that persists across sessions",
+  "owner": {
+    "name": "code4161",
+    "url": "https://memgit.dev"
+  },
+  "plugins": [
+    {
+      "name": "memgit",
+      "description": "Git for AI memory \u2014 persistent, version-controlled context across Claude, GPT, Cursor and more. Adds the memgit MCP server: resume_session, search_memories, save_memory, get_memory, list_memories, verify_memory, get_checkpoint_log.",
+      "author": {
+        "name": "code4161",
+        "url": "https://memgit.dev"
+      },
+      "source": "./plugins/memgit",
+      "category": "productivity",
+      "homepage": "https://memgit.dev",
+      "keywords": [
+        "memory",
+        "mcp",
+        "context",
+        "productivity",
+        "version-control"
+      ]
+    }
+  ]
+}
