@@ -1,8 +1,8 @@
 {
   "name": "memgit",
   "displayName": "memgit",
-  "description": "Git for AI memory — persistent, version-controlled context that survives across sessions. Requires the memgit CLI: pip install memgit && memgit init && memgit setup claude-code.",
-  "version": "0.10.0",
+  "description": "Git for AI memory \u2014 persistent, version-controlled context that survives across sessions. Requires the memgit CLI: pip install memgit && memgit init && memgit setup claude-code.",
+  "version": "0.11.0",
   "author": {
     "name": "code4161",
     "url": "https://memgit.dev"
@@ -10,5 +10,11 @@
   "homepage": "https://memgit.dev",
   "repository": "https://github.com/code4161/memgit",
   "license": "MIT",
-  "keywords": ["memory", "mcp", "context", "productivity", "version-control"]
+  "keywords": [
+    "memory",
+    "mcp",
+    "context",
+    "productivity",
+    "version-control"
+  ]
 }
