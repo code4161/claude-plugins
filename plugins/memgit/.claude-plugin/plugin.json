@@ -2,7 +2,7 @@
   "name": "memgit",
   "displayName": "memgit",
   "description": "Git for AI memory \u2014 persistent, version-controlled context that survives across sessions. Requires the memgit CLI: pip install memgit && memgit init && memgit setup claude-code.",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "author": {
     "name": "code4161",
     "url": "https://memgit.dev"
