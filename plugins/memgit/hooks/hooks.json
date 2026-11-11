@@ -2,16 +2,16 @@
   "description": "memgit: memory arrives at session start and with each prompt, and what the session learns is saved before it ends",
   "hooks": {
     "SessionStart": [
-      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" resume" } ] }
+      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/memgit-hook.sh\" resume" } ] }
     ],
     "UserPromptSubmit": [
-      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" prompt-recall" } ] }
+      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/memgit-hook.sh\" prompt-recall" } ] }
     ],
     "PostToolUse": [
-      { "matcher": "Read|Grep|Glob", "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" context-recall" } ] }
+      { "matcher": "Read|Grep|Glob", "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/memgit-hook.sh\" context-recall" } ] }
     ],
     "Stop": [
-      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" stop-guard" } ] }
+      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/memgit-hook.sh\" stop-guard" } ] }
     ]
   }
 }

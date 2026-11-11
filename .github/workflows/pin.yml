@@ -1,0 +1,19 @@
+name: pin
+on: [push, pull_request]
+jobs:
+  pin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: The server pin, plugin.json and marketplace.json name one version
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          p = json.load(open("plugins/memgit/.claude-plugin/plugin.json"))["version"]
+          m = json.load(open("plugins/memgit/.mcp.json"))["mcpServers"]["memgit"]["args"]
+          pin = [a for a in m if a.startswith("memgit-mcp@")]
+          legacy = [x["version"] for x in json.load(open("marketplace.json"))["plugins"] if x["name"] == "memgit"]
+          ok = pin == [f"memgit-mcp@{p}"] and legacy in ([], [p])
+          print(f"plugin.json {p}, server pin {pin}, root marketplace.json {legacy}")
+          sys.exit(0 if ok else 1)
+          PY

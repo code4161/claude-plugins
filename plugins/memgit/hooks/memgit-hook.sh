@@ -5,7 +5,7 @@
 # silent when there is none yet, which is the case in the first seconds of the
 # first session. A hook must never fail a session.
 #
-# Usage: memgit-hook resume | prompt-recall | context-recall | action-gate | stop-guard
+# Usage: memgit-hook.sh resume | prompt-recall | context-recall | action-gate | stop-guard
 
 # Someone who also ran `memgit setup hooks` already has these hooks in their own
 # settings; running them twice would inject every digest twice.

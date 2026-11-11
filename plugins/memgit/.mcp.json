@@ -3,7 +3,7 @@
     "memgit": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "memgit-mcp"]
+      "args": ["-y", "memgit-mcp@0.14.2"]
     }
   }
 }
