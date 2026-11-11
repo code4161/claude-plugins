@@ -9,11 +9,11 @@ Inside Claude Code:
     /plugin marketplace add code4161/claude-plugins
     /plugin install memgit@memgit
 
-The plugin needs Node.js and Python 3.11 or newer. On first start it runs the memgit MCP server through npx (memgit-mcp, pinned to the plugin's version), which installs memgit into ~/.memgit-npm-venv and creates the memory store in ~/.memgit-store.
+The plugin needs Node.js and Python 3.11 or newer. On first start, server/bin/memgit-mcp.js (the memgit-mcp launcher, shipped inside the plugin) installs memgit at the plugin's version from PyPI into ~/.memgit-npm-venv and creates the memory store in ~/.memgit-store.
 
 ## What it does
 
-The MCP server gives Claude tools to search, read and save memories. The plugin's hooks call hooks/memgit-hook.sh, which runs the installed memgit command:
+The MCP server gives Claude tools to search, read and save memories. The plugin's hooks run hooks/memgit-hook.mjs, which calls the installed memgit command:
 
 - At session start, the most relevant memories and the state of tracked work arrive as context.
 - With each prompt, and after Claude reads or searches files, matching memories are added.

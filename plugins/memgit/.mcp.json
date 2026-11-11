@@ -2,8 +2,10 @@
   "mcpServers": {
     "memgit": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "memgit-mcp@0.14.2"]
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/server/bin/memgit-mcp.js"
+      ]
     }
   }
 }

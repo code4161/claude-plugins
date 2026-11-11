@@ -5,15 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: The server pin, plugin.json and marketplace.json name one version
+      - name: plugin.json, the shipped launcher and marketplace.json name one version
         run: |
           python3 - <<'PY'
           import json, sys
           p = json.load(open("plugins/memgit/.claude-plugin/plugin.json"))["version"]
-          m = json.load(open("plugins/memgit/.mcp.json"))["mcpServers"]["memgit"]["args"]
-          pin = [a for a in m if a.startswith("memgit-mcp@")]
+          s = json.load(open("plugins/memgit/server/package.json"))["version"]
+          lock = json.load(open("plugins/memgit/server/package-lock.json"))["version"]
           legacy = [x["version"] for x in json.load(open("marketplace.json"))["plugins"] if x["name"] == "memgit"]
-          ok = pin == [f"memgit-mcp@{p}"] and legacy in ([], [p])
-          print(f"plugin.json {p}, server pin {pin}, root marketplace.json {legacy}")
-          sys.exit(0 if ok else 1)
+          print(f"plugin.json {p}, server/package.json {s}, lock {lock}, root marketplace.json {legacy}")
+          sys.exit(0 if s == p == lock and legacy in ([], [p]) else 1)
           PY
+      - name: The shipped launcher is the released one, byte for byte
+        run: |
+          v=$(python3 -c 'import json; print(json.load(open("plugins/memgit/.claude-plugin/plugin.json"))["version"])')
+          for f in bin/memgit-mcp.js package.json; do
+            curl -fsSL "https://raw.githubusercontent.com/code4161/memgit/v$v/npm-wrapper/$f" -o /tmp/upstream
+            cmp /tmp/upstream "plugins/memgit/server/$f" && echo "$f matches v$v"
+          done
