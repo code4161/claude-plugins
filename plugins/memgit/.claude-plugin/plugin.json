@@ -16,5 +16,9 @@
     "context",
     "productivity",
     "version-control"
-  ]
+  ],
+  "documentationUrl": "https://memgit.dev/docs",
+  "supportUrl": "https://github.com/code4161/memgit/issues",
+  "privacyPolicyUrl": "https://memgit.dev/privacy",
+  "termsOfServiceUrl": "https://memgit.dev/terms"
 }

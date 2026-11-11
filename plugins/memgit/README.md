@@ -37,12 +37,12 @@ Two files run, both shipped in this plugin:
 - server/bin/memgit-mcp.js starts the MCP server. On first start it creates a Python environment at ~/.memgit-npm-venv and installs memgit from PyPI at the plugin's version; later starts reuse it. It then runs memgit serve.
 - hooks/memgit-hook.mjs runs on four Claude Code events. It reads ~/.claude/settings.json only to check whether you already set memgit hooks up, finds memgit on your PATH or in ~/.memgit-npm-venv, and passes the event to it. It writes nothing itself.
 
-memgit keeps its data in one store folder: ~/.memgit-store, or an existing store under ~/.claude, ~/.cursor or ~/.windsurf, or the folder set in MEMGIT_STORE. Network calls happen only in these cases: the PyPI install on first start; memgit cloud sync, if you sign up, which sends memories end-to-end encrypted; a licence check with Polar, if you activate a Pro key. There is no telemetry. Privacy policy: https://memgit.dev/privacy.
+memgit keeps its data in one store folder: ~/.memgit-store, or an existing store under ~/.claude, ~/.cursor or ~/.windsurf, or the folder set in MEMGIT_STORE. Network calls happen only in these cases: the PyPI install on first start; memgit cloud sync, if you sign up, which sends memories end-to-end encrypted; a licence check with Polar, if you activate a Pro key. There is no telemetry. Privacy policy: https://memgit.dev/privacy
 
 ## Troubleshooting
 
-If no memories appear, check that Python 3.11 or newer is installed (python3 --version) and run /mcp in Claude Code to see whether the memgit server connected. The launcher prints its install output to the server's log. To start over, delete ~/.memgit-npm-venv; your memories in ~/.memgit-store are kept. Issues: https://github.com/code4161/memgit/issues.
+If no memories appear, check that Python 3.11 or newer is installed (python3 --version) and run /mcp in Claude Code to see whether the memgit server connected. The launcher prints its install output to the server's log. To start over, delete ~/.memgit-npm-venv; your memories in ~/.memgit-store are kept. Issues: https://github.com/code4161/memgit/issues
 
 ## Source and licence
 
-Source code: https://github.com/code4161/memgit. Licence: MIT.
+Licence: MIT. Source code: https://github.com/code4161/memgit
