@@ -1,0 +1,17 @@
+{
+  "description": "memgit: memory arrives at session start and with each prompt, and what the session learns is saved before it ends",
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" resume" } ] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" prompt-recall" } ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "Read|Grep|Glob", "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" context-recall" } ] }
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/bin/memgit-hook\" stop-guard" } ] }
+    ]
+  }
+}

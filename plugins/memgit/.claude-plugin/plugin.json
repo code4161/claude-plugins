@@ -1,7 +1,7 @@
 {
   "name": "memgit",
   "displayName": "memgit",
-  "description": "Git for AI memory \u2014 persistent, version-controlled context that survives across sessions. Requires the memgit CLI: pip install memgit && memgit init && memgit setup claude-code.",
+  "description": "One memory for Claude Code across sessions, machines and tools: versioned, searchable, with rollback. Installs itself (needs Node and Python 3.11+); memory arrives at session start and is saved as you work. Optional end-to-end encrypted sync.",
   "version": "0.14.1",
   "author": {
     "name": "code4161",
