@@ -3,7 +3,7 @@
     {
       "name": "memgit",
       "description": "One memory for Claude Code across sessions, machines and tools: versioned, searchable, with rollback. Installs itself (needs Node and Python 3.11+); memory arrives at session start and is saved as you work. Optional end-to-end encrypted sync.",
-      "version": "0.15.0",
+      "version": "0.16.0",
       "path": "plugins/memgit",
       "tags": [
         "memory",
